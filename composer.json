@@ -1,0 +1,36 @@
+{
+    "name": "anjemark/remote",
+    "description": "Run command remote",
+    "license": "mit",
+    "keywords": [
+        "ssh",
+        "remote",
+        "commands",
+        "sync",
+        "database",
+        "laravel"
+    ],
+    "authors": [
+        {
+            "name": "Tobbe Anjemark",
+            "email": "tobias.anjemark@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Anjemark\\Remote\\": "src/"     
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Anjemark\\Remote\\RemoteServiceProvider"                
+            ]   
+        }
+    }
+}
