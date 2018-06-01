@@ -1,13 +1,13 @@
 {
     "name": "anjemark/remote",
-    "description": "Run command remote",
+    "description": "Remote commands",
     "license": "mit",
+    "type": "library",
     "keywords": [
         "ssh",
         "remote",
-        "commands",
-        "sync",
-        "database",
+        "artisan",
+        "commands",        
         "laravel"
     ],
     "authors": [
@@ -18,8 +18,9 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {
-        "php": "^7.0"
+    "require": {        
+        "php": ">=7.0.0",
+        "illuminate/support": "^5.5"
     },
     "autoload": {
         "psr-4": {
