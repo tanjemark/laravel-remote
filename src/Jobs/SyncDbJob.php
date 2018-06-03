@@ -3,16 +3,15 @@
 namespace Anjemark\Remote\Jobs;
 
 use Carbon\Carbon;
+use Faker\Generator as Faker;
 use Illuminate\Bus\Queueable;
-use Illuminate\Http\File;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use Faker\Generator as Faker;
 
 class SyncDbJob implements ShouldQueue
 {
@@ -57,7 +56,9 @@ class SyncDbJob implements ShouldQueue
 
         $fileName = str_replace(' ', '-', 'db_' . $database . '_' . Carbon::now() .'.json');
         
+        Storage::makeDirectory('remote/');
+
         $file = new Filesystem();
-        $file->put(storage_path($fileName), $content);
+        $file->put(storage_path('app/public/remote/' . $fileName), $content);
     }
 }
