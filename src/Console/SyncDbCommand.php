@@ -3,9 +3,10 @@
 namespace Anjemark\Remote\Console;
 
 use Illuminate\Console\Command;
+use Anjemark\Remote\Jobs\SyncDbJob;
 use Anjemark\Remote\Traits\SSHable;
 
-class ArtisanCommand extends Command
+class SyncDbCommand extends Command
 {
     use SSHable;
 
@@ -14,14 +15,14 @@ class ArtisanCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'remote:artisan {channel} {cmd}';
+    protected $signature = 'remote:db {channel}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Execute php artisan commands remotely.';
+    protected $description = 'Sync db from remote server.';
 
     /**
      * Create a new command instance.
@@ -40,12 +41,10 @@ class ArtisanCommand extends Command
      */
     public function handle()
     {
-        $this->connect($this->argument('channel'));
-                
-        $output = $this->command('php artisan ' . $this->argument('cmd'));
+        $this->info('Start');
 
-        $this->info($output);
+        SyncDbJob::dispatch();
 
-        $this->disconnect();
+        $this->info('Done');
     }
 }

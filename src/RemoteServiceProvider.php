@@ -3,6 +3,7 @@
 namespace Anjemark\Remote;
 
 use Illuminate\Support\ServiceProvider;
+use Anjemark\Remote\Console\SyncDbCommand;
 use Anjemark\Remote\Console\ArtisanCommand;
 
 class RemoteServiceProvider extends ServiceProvider
@@ -21,6 +22,7 @@ class RemoteServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->commands([
                 ArtisanCommand::class,
+                SyncDbCommand::class,
             ]);
         }
     }

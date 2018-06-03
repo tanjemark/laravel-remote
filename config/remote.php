@@ -26,4 +26,12 @@ return [
         'private' => '~/.ssh/id_rsa',
         'public' => '~/.ssh/id_rsa.pub',
     ],
+
+    'fake' => [
+        'users' => [
+            'email' => 'email',
+            'first_name' => 'firstName',
+            'last_name' => 'lastName',
+        ]
+    ],
 ];
