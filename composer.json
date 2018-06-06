@@ -1,6 +1,6 @@
 {
-    "name": "anjemark/remote",
-    "description": "Remote commands",
+    "name": "tanjemark/remote",
+    "description": "Execute commands remotely using SSH.",
     "license": "mit",
     "type": "library",
     "keywords": [
