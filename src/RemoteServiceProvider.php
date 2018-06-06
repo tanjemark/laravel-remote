@@ -2,8 +2,11 @@
 
 namespace Anjemark\Remote;
 
+use Anjemark\Remote\Console\DbCommand;
 use Illuminate\Support\ServiceProvider;
 use Anjemark\Remote\Console\ArtisanCommand;
+use Anjemark\Remote\Console\ExportDbCommand;
+use Anjemark\Remote\Console\InsertDbCommand;
 
 class RemoteServiceProvider extends ServiceProvider
 {
@@ -20,7 +23,10 @@ class RemoteServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->commands([
+                DbCommand::class,
                 ArtisanCommand::class,
+                ExportDbCommand::class,
+                InsertDbCommand::class,
             ]);
         }
     }

@@ -6,7 +6,7 @@ use Exception;
 
 trait SSHable
 {
-    public $channel;
+    public $alias;
     public $connection;
 
     /**
@@ -14,34 +14,32 @@ trait SSHable
      *
      * @return void
      */
-    public function connect($channel)
+    public function connect($alias)
     {
-        $channel = str_replace('@', '', $channel);
+        $alias = str_replace('@', '', $alias);
 
-        if (!config("remote.channels.$channel")) {
-            $this->error("@$channel not found!");
+        if (!config("remote.servers.$alias")) {
+            $this->error("@$alias not found!");
             exit();
         }
         
-        $ip = config("remote.channels.$channel.ip");
-
         try {
             $connection = ssh2_connect(
-                $ip,
-                config("remote.channels.$channel.port"),
+                config("remote.servers.$alias.ip"),
+                config("remote.servers.$alias.port"),
                 ['hostkey' => 'ssh-rsa']
             );
         } catch (Exception $e) {
-            $this->error("Failed to connect to $ip");
+            $this->error("Failed to connect to @$alias");
             exit();
         }
 
-        $this->channel = $channel;
+        $this->alias = $alias;
         $this->connection = $connection;
         
-        $authenticated = static::authenticate($connection, $channel);
+        $authenticated = static::authenticate($connection, $alias);
 
-        $this->info("Connected to $ip");
+        $this->info("Connected to @$alias");
 
         return $authenticated;
     }
@@ -51,19 +49,19 @@ trait SSHable
      *
      * @return void
      */
-    protected static function authenticate($connection, $channel)
+    protected static function authenticate($connection, $alias)
     {
         try {
-            if (config("remote.channels.$channel.password")) {
+            if (config("remote.servers.$alias.password")) {
                 $auth = ssh2_auth_password(
                     $connection,
-                    config("remote.channels.$channel.username"),
+                    config("remote.servers.$alias.username"),
                     'vagrant'
                 );
             } else {
                 $auth = ssh2_auth_pubkey_file(
                     $connection,
-                    config("remote.channels.$channel.username"),
+                    config("remote.servers.$alias.username"),
                     config("remote.ssh_paths.public"),
                     config("remote.ssh_paths.private")
                 );
@@ -82,13 +80,12 @@ trait SSHable
      */
     public function command($cmd = '')
     {
-        $this->info("Start running $cmd");
-
-        $path = config("remote.channels.$this->channel.path");
-        $cmd = $path ? 'cd ' . config("remote.channels.{$this->channel}.path") . ' && ' . $cmd : $cmd;
+        $path = config("remote.servers.$this->alias.path");
+        $cmd = $path ? "cd $path && $cmd" : $cmd;
 
         $stream = ssh2_exec($this->connection, $cmd);
         stream_set_blocking($stream, true);
+
         return stream_get_contents($stream);
     }
 
@@ -99,9 +96,7 @@ trait SSHable
      */
     public function disconnect()
     {
-        $ip = config("remote.channels.$this->channel.ip");
-
-        $this->info("Disconnecting from $ip");
+        $this->info("Disconnecting from @$this->alias");
         ssh2_disconnect($this->connection);
     }
 }
