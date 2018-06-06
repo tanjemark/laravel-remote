@@ -23,7 +23,7 @@ you don't need to manually register the ServiceProvider.
 
 After that, publish the configuration file:
 ```bash
-$ php artisan vendor:publish --provider="Anjemark\Remote\RemoteServiceProvider"
+$ php artisan vendor:publish --provider="Tanjemark\Remote\RemoteServiceProvider"
 ```
 You're gonna need to add a remote server to the configuration file.
 
