@@ -1,6 +1,6 @@
 {
-    "name": "anjemark/remote",
-    "description": "Remote commands",
+    "name": "tanjemark/remote",
+    "description": "Execute commands remotely using SSH.",
     "license": "mit",
     "type": "library",
     "keywords": [
@@ -20,6 +20,7 @@
     "minimum-stability": "dev",
     "require": {        
         "php": ">=7.0.0",
+        "fzaninotto/faker": "^1.4",
         "illuminate/support": "^5.5"
     },
     "autoload": {

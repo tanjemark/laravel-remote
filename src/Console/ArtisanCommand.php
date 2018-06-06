@@ -14,14 +14,14 @@ class ArtisanCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'remote:artisan {channel} {cmd}';
+    protected $signature = 'remote:artisan {alias} {cmd}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Run php artisan commands remote.';
+    protected $description = 'Execute php artisan command remotely.';
 
     /**
      * Create a new command instance.
@@ -40,7 +40,7 @@ class ArtisanCommand extends Command
      */
     public function handle()
     {
-        $this->connect($this->argument('channel'));
+        $this->connect($this->argument('alias'));
                 
         $output = $this->command('php artisan ' . $this->argument('cmd'));
 
