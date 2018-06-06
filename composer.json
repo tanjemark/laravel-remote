@@ -25,13 +25,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Anjemark\\Remote\\": "src/"     
+            "Tanjemark\\Remote\\": "src/"     
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Anjemark\\Remote\\RemoteServiceProvider"                
+                "Tanjemark\\Remote\\RemoteServiceProvider"                
             ]   
         }
     }

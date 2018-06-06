@@ -1,6 +1,6 @@
 <?php
 
-namespace Anjemark\Remote\Traits;
+namespace Tanjemark\Remote\Traits;
 
 use Exception;
 
