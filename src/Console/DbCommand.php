@@ -1,11 +1,11 @@
 <?php
 
-namespace Anjemark\Remote\Console;
+namespace Tanjemark\Remote\Console;
 
 use Carbon\Carbon;
 use Illuminate\Console\Command;
-use Anjemark\Remote\Jobs\SyncDbJob;
-use Anjemark\Remote\Traits\SSHable;
+use Tanjemark\Remote\Jobs\SyncDbJob;
+use Tanjemark\Remote\Traits\SSHable;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Storage;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Anjemark\Remote\Console;
+namespace Tanjemark\Remote\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;

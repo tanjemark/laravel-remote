@@ -1,12 +1,12 @@
 <?php
 
-namespace Anjemark\Remote;
+namespace Tanjemark\Remote;
 
-use Anjemark\Remote\Console\DbCommand;
+use Tanjemark\Remote\Console\DbCommand;
 use Illuminate\Support\ServiceProvider;
-use Anjemark\Remote\Console\ArtisanCommand;
-use Anjemark\Remote\Console\ExportDbCommand;
-use Anjemark\Remote\Console\InsertDbCommand;
+use Tanjemark\Remote\Console\ArtisanCommand;
+use Tanjemark\Remote\Console\ExportDbCommand;
+use Tanjemark\Remote\Console\InsertDbCommand;
 
 class RemoteServiceProvider extends ServiceProvider
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Anjemark\Remote\Console;
+namespace Tanjemark\Remote\Console;
 
 use Illuminate\Console\Command;
-use Anjemark\Remote\Traits\SSHable;
+use Tanjemark\Remote\Traits\SSHable;
 
 class ArtisanCommand extends Command
 {
