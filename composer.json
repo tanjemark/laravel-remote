@@ -7,8 +7,11 @@
         "ssh",
         "remote",
         "artisan",
-        "commands",        
-        "laravel"
+        "commands",
+        "laravel",
+        "db-sync",
+        "database",
+        "sync"
     ],
     "authors": [
         {
