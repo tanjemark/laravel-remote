@@ -18,7 +18,7 @@ class DbCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'remote:db-sync {from} {to}';
+    protected $signature = 'remote:db-sync {from} {to} {--fake}';
 
     /**
      * The console command description.
@@ -46,7 +46,8 @@ class DbCommand extends Command
     {
         $this->connect($this->argument('from'));
             $this->info('Start exporting database from ' . $this->argument('from'));
-            $content = $this->command('php artisan remote:export');
+            $options = $this->option('fake') ? ['--fake'] : [];
+            $content = $this->call('remote:export', $options);
         $this->disconnect();
         
         $this->info('');
