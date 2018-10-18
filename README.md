@@ -41,6 +41,8 @@ $ php artisan remote:artisan @live migrate
 ```
 
 ### Database sync
+If you have provided a `fake` setting in `config/remote.php` the provided columns will be faked. Making it possible to make your sync GDPR approved 😁
+
 ```bash
 $ php artisan remote:db-sync '@from alias' '@to alias'
 ```
