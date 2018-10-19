@@ -1,10 +1,10 @@
 # Laravel Remote
 
-[![GitHub issues](https://img.shields.io/github/issues/tanjemark/remote.svg?style=flat-square)](https://github.com/tanjemark/remote/issues)
-[![GitHub forks](https://img.shields.io/github/forks/tanjemark/remote.svg?style=flat-square)](https://github.com/tanjemark/remote/network)
-[![GitHub stars](https://img.shields.io/github/stars/tanjemark/remote.svg?style=flat-square)](https://github.com/tanjemark/remote/stargazers)
-[![GitHub license](https://img.shields.io/github/license/tanjemark/remote.svg?style=flat-square)](https://github.com/tanjemark/remote/blob/master/LICENSE)
-[![Twitter](https://img.shields.io/twitter/url/https/github.com/tanjemark/remote.svg?style=flat-square)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Ftanjemark%2Fremote)
+[![GitHub issues](https://img.shields.io/github/issues/tanjemark/laravel-remote.svg?style=flat-square)](https://github.com/tanjemark/remote/issues)
+[![GitHub forks](https://img.shields.io/github/forks/tanjemark/laravel-remote.svg?style=flat-square)](https://github.com/tanjemark/remote/network/members)
+[![GitHub stars](https://img.shields.io/github/stars/tanjemark/laravel-remote.svg?style=flat-square)](https://github.com/tanjemark/remote/stargazers)
+[![GitHub license](https://img.shields.io/github/license/tanjemark/laravel-remote.svg?style=flat-square)](https://github.com/tanjemark/remote/blob/master/LICENSE.md)
+[![Twitter](https://img.shields.io/twitter/url/https/github.com/tanjemark/laravel-remote.svg?style=flat-square)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Ftanjemark%2Flaravel-remote)
 
 Execute commands remotely using SSH.
 
@@ -53,7 +53,11 @@ $ php artisan remote:db-sync @live @local --fake
 ```
 
 ## Requirements
-ssh2 should be installed on your server.
+ssh2 have to be installed on all your servers.
+
+```bash
+$ sudo apt-get install php7.2-ssh2
+```
 
 ## License
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
