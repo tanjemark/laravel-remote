@@ -14,7 +14,7 @@ class ExportDbCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'remote:export';
+    protected $signature = 'remote:export {--fake}';
 
     /**
      * The console command description.
@@ -48,7 +48,7 @@ class ExportDbCommand extends Command
             $output['table'] = $table;
             $output['columns'] = $rows->map(function ($row) use ($table, $faker) {
                 return collect($row)->map(function ($value, $column) use ($table, $faker) {
-                    if ($fake = config("remote.fake.$table.$column")) {
+                    if ($this->option('fake') && $fake = config("remote.fake.$table.$column")) {
                         $value = $faker->{$fake};
                     }
                     return $value;

@@ -1,4 +1,4 @@
-# Remote
+# Laravel Remote
 
 [![GitHub issues](https://img.shields.io/github/issues/tanjemark/remote.svg?style=flat-square)](https://github.com/tanjemark/remote/issues)
 [![GitHub forks](https://img.shields.io/github/forks/tanjemark/remote.svg?style=flat-square)](https://github.com/tanjemark/remote/network)
@@ -41,6 +41,8 @@ $ php artisan remote:artisan @live migrate
 ```
 
 ### Database sync
+If you have provided a `fake` setting in `config/remote.php` the provided columns will be faked. Making it possible to make your sync GDPR approved 😁
+
 ```bash
 $ php artisan remote:db-sync '@from alias' '@to alias'
 ```
