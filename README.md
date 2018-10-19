@@ -53,7 +53,11 @@ $ php artisan remote:db-sync @live @local --fake
 ```
 
 ## Requirements
-ssh2 should be installed on your server.
+ssh2 have to be installed on all your servers.
+
+```bash
+$ sudo apt-get install php7.2-ssh2
+```
 
 ## License
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
