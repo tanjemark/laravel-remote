@@ -1,13 +1,9 @@
 <?php
 
-namespace Tanjemark\Remote\Console;
+namespace Tanjemark\LaravelRemote\Console;
 
-use Carbon\Carbon;
 use Illuminate\Console\Command;
-use Tanjemark\Remote\Jobs\SyncDbJob;
-use Tanjemark\Remote\Traits\SSHable;
-use Illuminate\Filesystem\Filesystem;
-use Illuminate\Support\Facades\Storage;
+use Tanjemark\LaravelRemote\Traits\SSHable;
 
 class DbCommand extends Command
 {

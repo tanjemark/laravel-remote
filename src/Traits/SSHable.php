@@ -1,6 +1,6 @@
 <?php
 
-namespace Tanjemark\Remote\Traits;
+namespace Tanjemark\LaravelRemote\Traits;
 
 use Exception;
 
