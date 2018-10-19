@@ -1,12 +1,12 @@
 <?php
 
-namespace Tanjemark\Remote;
+namespace Tanjemark\LaravelRemote;
 
-use Tanjemark\Remote\Console\DbCommand;
+use Tanjemark\LaravelRemote\Console\DbCommand;
 use Illuminate\Support\ServiceProvider;
-use Tanjemark\Remote\Console\ArtisanCommand;
-use Tanjemark\Remote\Console\ExportDbCommand;
-use Tanjemark\Remote\Console\InsertDbCommand;
+use Tanjemark\LaravelRemote\Console\ArtisanCommand;
+use Tanjemark\LaravelRemote\Console\ExportDbCommand;
+use Tanjemark\LaravelRemote\Console\InsertDbCommand;
 
 class RemoteServiceProvider extends ServiceProvider
 {

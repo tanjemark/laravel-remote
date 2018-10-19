@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of Remote.
+ * This file is part of Laravel Remote.
  *
  * (c) Tobias Anjemark <tobias.anjemark@gmail.com>
  *

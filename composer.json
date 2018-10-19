@@ -1,5 +1,5 @@
 {
-    "name": "tanjemark/remote",
+    "name": "tanjemark/laravel-remote",
     "description": "Execute commands remotely using SSH.",
     "license": "mit",
     "type": "library",
@@ -28,13 +28,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Tanjemark\\Remote\\": "src/"     
+            "Tanjemark\\LaravelRemote\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Tanjemark\\Remote\\RemoteServiceProvider"                
+                "Tanjemark\\LaravelRemote\\RemoteServiceProvider"
             ]   
         }
     }

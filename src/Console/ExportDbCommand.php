@@ -1,6 +1,6 @@
 <?php
 
-namespace Tanjemark\Remote\Console;
+namespace Tanjemark\LaravelRemote\Console;
 
 use Faker\Generator as Faker;
 use Illuminate\Console\Command;
