@@ -15,7 +15,7 @@ Execute commands remotely using SSH.
 Require this package in your composer.json and update your dependencies:
 
 ```bash
-$ composer require tanjemark/remote
+$ composer require tanjemark/laravel-remote
 ```
 
 Since this package supports Laravel's Package Auto-Discovery
@@ -44,12 +44,12 @@ $ php artisan remote:artisan @live migrate
 If you have provided a `fake` setting in `config/remote.php` the provided columns will be faked. Making it possible to make your sync GDPR approved 😁
 
 ```bash
-$ php artisan remote:db-sync '@from alias' '@to alias'
+$ php artisan remote:db-sync '@from_alias' '@to_alias'
 ```
 
 ```bash
 # Example
-$ php artisan remote:db-sync @live @local
+$ php artisan remote:db-sync @live @local --fake
 ```
 
 ## Requirements
